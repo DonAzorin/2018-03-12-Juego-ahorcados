@@ -9,76 +9,64 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header>Todo o nada, de ti depende ir al extraordinario o no 😎</header>
-    <section class="contexto">
-      <h1>Si estás leyendo esto, quiere decir que estás en la primera o segunda vuelta de finales.</h1>
-      <p>Como no soy tan, tan, TAN malo, decidí que ésta sería tu evaluación.</p>
-      <p>Solo tendrás que jugar este ahorcado. Cada victoria te dará medio punto y tienes 10 partidas diferentes.</p>
-      <p>Si además desarrollas el tema de la palabra que descubras, tendrás otro medio punto.</p>
+    <header>Examen final México siglo XIX II</header>
+    <section class="context">
+      <h1>Bienvenido a la primera o segunda vuelta de finales.</h1>
+      <p>Para pasar este examen tendrás que jugar hasta 10 veces este ahorcado.</p>
+      <p>Cada victoria te dará medio punto y si desarrollas el tema de la palabra que descubras, tendrás otro medio punto.</p>
       <p>Tus victorias y lo que me digas de cada palabra será tu promedio del semestre.</p>
-      <p>Por lo que si estas aquí para subir tu 9 a 10 y sacaste 6... <span>NO TE DEVOLVERÉ TU CALIFICACIÓN.</span></p>
+      <p>Por lo que si estas aquí para subir tu promedio y fallaste, <span>NO TE DEVOLVERÉ TU CALIFICACIÓN.</span></p>
       <p>Recuerda que si reprobaste la primera ronda, y reúnes los requisitos, puedes presentar la segunda vuelta.</p>
       <p>Si no reúnes los requisitos o estás en segunda vuelta y reprobaste, <span>NOS VEMOS EN EL EXTRAORDINARIO</span></p>
       <h1>Mucha suerte ❤️</h1>
-      <!-- <input type="button" value="¡Veamos quién ganó!" onclick="playervsplayer(this.form)"/> -->
+      <input type="button" value="¡Comienza el juego!" onclick="listWords()"/>
     </section>
-    <section class="ahorcado">
+    <section class="hangman">
       <h2>Tienes <span class="errores">7</span> vidas</h2>
       <img src="images/0error.jpg" alt="Inicio">
     </section>
-    <section class="tablero">
-      <table id="alfabeto">
+    <section class="board">
+      <table id="alphabet">
         <th colspan="14">Elige cada letra con sabiduría</th>
         <tr>
-          <td>a</td>
-          <td>b</td>
-          <td>c</td>
-          <td>d</td>
-          <td>e</td>
-          <td>f</td>
-          <td>g</td>
-          <td>h</td>
-          <td>i</td>
-          <td>j</td>
-          <td>k</td>
-          <td>l</td>
-          <td>m</td>
-          <td>n</td>
+          <td><button value="a" onclick="clickLetter(this)">a</td>
+          <td><button value="b" onclick="clickLetter(this)">b</td>
+          <td><button value="c" onclick="clickLetter(this)">c</td>
+          <td><button value="d" onclick="clickLetter(this)">d</td>
+          <td><button value="e" onclick="clickLetter(this)">e</td>
+          <td><button value="f" onclick="clickLetter(this)">f</td>
+          <td><button value="g" onclick="clickLetter(this)">g</td>
+          <td><button value="h" onclick="clickLetter(this)">h</td>
+          <td><button value="i" onclick="clickLetter(this)">i</td>
+          <td><button value="j" onclick="clickLetter(this)">j</td>
+          <td><button value="k" onclick="clickLetter(this)">k</td>
+          <td><button value="l" onclick="clickLetter(this)">l</td>
+          <td><button value="m" onclick="clickLetter(this)">m</td>
+          <td><button value="n" onclick="clickLetter(this)">n</td>
         </tr>
         <tr>
-          <td>ñ</td>
-          <td>o</td>
-          <td>p</td>
-          <td>q</td>
-          <td>r</td>
-          <td>s</td>
-          <td>t</td>
-          <td>u</td>
-          <td>v</td>
-          <td>w</td>
-          <td>x</td>
-          <td>y</td>
-          <td>z</td>
+          <td><button value="ñ" onclick="clickLetter(this)">ñ</td>
+          <td><button value="o" onclick="clickLetter(this)">o</td>
+          <td><button value="p" onclick="clickLetter(this)">p</td>
+          <td><button value="q" onclick="clickLetter(this)">q</td>
+          <td><button value="r" onclick="clickLetter(this)">r</td>
+          <td><button value="s" onclick="clickLetter(this)">s</td>
+          <td><button value="t" onclick="clickLetter(this)">t</td>
+          <td><button value="u" onclick="clickLetter(this)">u</td>
+          <td><button value="v" onclick="clickLetter(this)">v</td>
+          <td><button value="w" onclick="clickLetter(this)">w</td>
+          <td><button value="q" onclick="clickLetter(this)">x</td>
+          <td><button value="y" onclick="clickLetter(this)">y</td>
+          <td><button value="z" onclick="clickLetter(this)">z</td>
         </tr>
       </table>
     </section>
-    <section class="reactivo">
-      <table id="reactivo">
-        <th colspan="10">Recuerda que debes explicar el tema que corresponde a esta palabra</th>
+    <section class="reactive">
+      <h2>Recuerda que debes explicar el tema que corresponde a esta palabra</h2>
+      <table id="reactive">
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
         </tr>
       </table>
-      <!-- Aqui va a ir la serie de casillas a descubrir -->
     </section>
     <script src="script.js"></script>
   </body>
