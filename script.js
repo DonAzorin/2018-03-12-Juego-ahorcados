@@ -1,5 +1,6 @@
 'use strict';
 var reactive;
+var fail = 0
 
 function listWords() {
   reactive = Math.floor(Math.random()*10)
@@ -26,6 +27,9 @@ function listWords() {
       reactive = 'plandetacubaya'
     }
   console.log(reactive);
+
+  // fetch('')
+
   makeTable (reactive);
 }
 
@@ -37,18 +41,22 @@ function clickLetter (letter) {
 
 document.addEventListener('keydown', function getKeyLetter(event) {
   var selectedLetter = event.key.toLowerCase();
-  console.log(selectedLetter);
   compareLetter (selectedLetter);
 })
 
 function compareLetter (selectedLetter) {
-  console.log(reactive.length);
+  var flag = 0;
   for (var i = 0; i < reactive.length; i++) {
-    if (selectedLetter == reactive [i]){
-      console.log('chingon');
+    if (selectedLetter == reactive [i]) {
+      document.getElementById('reactive').rows[0].cells[i].innerHTML = selectedLetter;
     } else {
-      console.log('fail');
+      flag++;
     }
+  }
+  if (flag == reactive.length) {
+    fail = fail + 1;
+    document.getElementById('errores').src = "images/1error.jpg";
+    document.getElementById('erroresnum').innerHTML = fail;
   }
 }
 

@@ -1,0 +1,23 @@
+{
+  "name": "20180312juegoahorcados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serverTest": "node_modules/.bin/live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonAzorin/2018-03-12-Juego-ahorcados.git"
+  },
+  "author": "DonAzorin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DonAzorin/2018-03-12-Juego-ahorcados/issues"
+  },
+  "homepage": "https://github.com/DonAzorin/2018-03-12-Juego-ahorcados#readme",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
