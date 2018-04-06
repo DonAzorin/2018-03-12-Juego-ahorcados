@@ -1,5 +1,6 @@
 body{
-  font-family: 'Indie Flower', cursive;
+  /* font-family: 'Indie Flower', cursive; */
+  font-family: sans-serif;
 }
 header{
   font-size: 40px;
@@ -8,7 +9,7 @@ header{
 }
 
 html{
-	background: linear-gradient(rgba(0, 51, 204, .8),
+	background: linear-gradient(rgba(0, 43, 122, .8),
 	rgba(0, 51, 204, .8)),
 	url('../images/salondeclases.jpg');
   background-attachment: fixed;
@@ -27,11 +28,10 @@ section {
 }
 
 td {
-    border: 5px solid #A10B7C;
-    font-size: 20px;
+    border: 3px solid #BB8800;
+    font-size: 30px;
     font-style: bold;
     height: 30px;
     text-align: center;
     width: 20px;
-    visibility: visible;
 }

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale= 1.0">
     <title>Última oportunidad</title>
     <link rel="icon" href="images/birrete.png">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   </head>
   <body>
     <header>Examen final México siglo XIX II</header>
@@ -22,46 +23,41 @@
       <input type="button" value="¡Comienza el juego!" onclick="listWords()"/>
     </section>
     <section class="hangman">
-      <h2>Llevas <span id="erroresnum">0</span>/7 errores</h2>
+      <h2>Llevas <span id="winText">0</span> palabras correctas y <span id="loseText">0</span> palabras incorrectas.</h2>
+      <h2>Llevas <span id="failText">0</span>/7 errores.</h2>
       <img id="errores" src="images/0error.jpg" alt="Inicio">
     </section>
-    <section class="board">
-      <table id="alphabet">
-        <th colspan="14">Elige cada letra con sabiduría</th>
-        <tr>
-          <td><button value="a" onclick="clickLetter(this)">a</td>
-          <td><button value="b" onclick="clickLetter(this)">b</td>
-          <td><button value="c" onclick="clickLetter(this)">c</td>
-          <td><button value="d" onclick="clickLetter(this)">d</td>
-          <td><button value="e" onclick="clickLetter(this)">e</td>
-          <td><button value="f" onclick="clickLetter(this)">f</td>
-          <td><button value="g" onclick="clickLetter(this)">g</td>
-          <td><button value="h" onclick="clickLetter(this)">h</td>
-          <td><button value="i" onclick="clickLetter(this)">i</td>
-          <td><button value="j" onclick="clickLetter(this)">j</td>
-          <td><button value="k" onclick="clickLetter(this)">k</td>
-          <td><button value="l" onclick="clickLetter(this)">l</td>
-          <td><button value="m" onclick="clickLetter(this)">m</td>
-          <td><button value="n" onclick="clickLetter(this)">n</td>
-        </tr>
-        <tr>
-          <td><button value="ñ" onclick="clickLetter(this)">ñ</td>
-          <td><button value="o" onclick="clickLetter(this)">o</td>
-          <td><button value="p" onclick="clickLetter(this)">p</td>
-          <td><button value="q" onclick="clickLetter(this)">q</td>
-          <td><button value="r" onclick="clickLetter(this)">r</td>
-          <td><button value="s" onclick="clickLetter(this)">s</td>
-          <td><button value="t" onclick="clickLetter(this)">t</td>
-          <td><button value="u" onclick="clickLetter(this)">u</td>
-          <td><button value="v" onclick="clickLetter(this)">v</td>
-          <td><button value="w" onclick="clickLetter(this)">w</td>
-          <td><button value="q" onclick="clickLetter(this)">x</td>
-          <td><button value="y" onclick="clickLetter(this)">y</td>
-          <td><button value="z" onclick="clickLetter(this)">z</td>
-        </tr>
-      </table>
+    <section id="alphabet">
+      <h2>Elige cada letra con sabiduría</h2>
+        <button id="a" class="letter" value="a" onclick="clickLetter(this)">a</button>
+        <button id="b" class="letter" value="b" onclick="clickLetter(this)">b</button>
+        <button id="c" class="letter" value="c" onclick="clickLetter(this)">c</button>
+        <button id="d" class="letter" value="d" onclick="clickLetter(this)">d</button>
+        <button id="e" class="letter" value="e" onclick="clickLetter(this)">e</button>
+        <button id="f" class="letter" value="f" onclick="clickLetter(this)">f</button>
+        <button id="g" class="letter" value="g" onclick="clickLetter(this)">g</button>
+        <button id="h" class="letter" value="h" onclick="clickLetter(this)">h</button>
+        <button id="i" class="letter" value="i" onclick="clickLetter(this)">i</button>
+        <button id="j" class="letter" value="j" onclick="clickLetter(this)">j</button>
+        <button id="k" class="letter" value="k" onclick="clickLetter(this)">k</button>
+        <button id="l" class="letter" value="l" onclick="clickLetter(this)">l</button>
+        <button id="m" class="letter" value="m" onclick="clickLetter(this)">m</button>
+        <button id="n" class="letter" value="n" onclick="clickLetter(this)">n</button>
+        <button id="ñ" class="letter" value="ñ" onclick="clickLetter(this)">ñ</button>
+        <button id="o" class="letter" value="o" onclick="clickLetter(this)">o</button>
+        <button id="p" class="letter" value="p" onclick="clickLetter(this)">p</button>
+        <button id="q" class="letter" value="q" onclick="clickLetter(this)">q</button>
+        <button id="r" class="letter" value="r" onclick="clickLetter(this)">r</button>
+        <button id="s" class="letter" value="s" onclick="clickLetter(this)">s</button>
+        <button id="t" class="letter" value="t" onclick="clickLetter(this)">t</button>
+        <button id="u" class="letter" value="u" onclick="clickLetter(this)">u</button>
+        <button id="v" class="letter" value="v" onclick="clickLetter(this)">v</button>
+        <button id="w" class="letter" value="w" onclick="clickLetter(this)">w</button>
+        <button id="x" class="letter" value="x" onclick="clickLetter(this)">x</button>
+        <button id="y" class="letter" value="y" onclick="clickLetter(this)">y</button>
+        <button id="z" class="letter" value="z" onclick="clickLetter(this)">z</button>
     </section>
-    <section class="reactive">
+    <section>
       <h2>Recuerda que debes explicar el tema que corresponde a esta palabra</h2>
       <table id="reactive">
         <tr>
