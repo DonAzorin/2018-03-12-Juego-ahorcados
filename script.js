@@ -2,11 +2,11 @@
 var reactive;
 var score = {
   'win': 0,
-  'lose': 0,
   'fail': 0,
-  }
+  'lose': 0
+}
 var checkWin = 0;
-var checkFail = 0;
+var checkLose = 0;
 
 function listWords() {
   reactive = Math.floor(Math.random()*10)
@@ -39,6 +39,8 @@ function listWords() {
 
   document.getElementById('failText').innerHTML = '0';
   document.getElementById('errores').src = 'images/0error.jpg';
+  checkWin = 0;
+  score.fail = 0;
   var showButton = document.querySelectorAll('.letter');
   for (var i = 0; i < showButton.length; i++) {
     var buttonList = showButton[i].id
@@ -61,53 +63,41 @@ document.addEventListener('keydown', function getKeyLetter(event) {
 })
 
 function compareLetter (selectedLetter) {
+  var flag = 0;
   for (var i = 0; i < reactive.length; i++) {
     if (selectedLetter == reactive [i]) {
-      checkWin++;
       document.getElementById('reactive').rows[0].cells[i].innerHTML = selectedLetter;
+      checkWin++
     } else {
-      checkFail++;
-      // console.log(checkFail);
+      flag ++;
     }
   }
-  if (checkWin == reactive.length){
+
+  if (checkWin == reactive.length) {
     score.win = score.win + 1;
     winText.innerHTML = score.win;
+  } else if (flag == reactive.length) {
+    score.fail = score.fail + 1;
+    failText.innerHTML = score.fail;
   }
-  // if (checkFail == reactive.length) {
-  //   score.fail = score.fail + 1;
-  //   failText.innerHTML = score.fail;
-  // }
+  //coloca una capa superior que no permita clickLetter o selectedLetter y tenga el botón de listWords
 
-  // var tableLetter = document.querySelectorAll('td');
-  // for (var i = 0; i < tableLetter.length; i++) {
-  //   var reactiveLetter = tableLetter[i].innerHTML;
-  //   if (reactiveLetter == tableLetter[i]) {
-  //     checkWin = checkWin + 1;
-  //     console.log(checkWin);
-  //   } else if (checkWin == reactive.length) {
-  //     console.log('Chingón compa');
-  //     score.win = score.win + 1;
-  //     winText.innerHTML = score.win;
-      //coloca una capa superior que no permita clickLetter o selectedLetter y tenga el botón de listWords
-  //   }
-  // }
+  for(let i = 1; i <= 6; i++) {
+    if(score.fail === i) {
+      document.getElementById('errores').src = 'images/' + i + 'error.jpg';
+    }
+  }
 
-  if (score.fail === 1) {
-    document.getElementById('errores').src = 'images/1error.jpg'
-  } else if (score.fail === 2) {
-    document.getElementById('errores').src = 'images/2error.jpg'
-  } else if (score.fail === 3) {
-    document.getElementById('errores').src = 'images/3error.jpg'
-  } else if (score.fail === 4) {
-    document.getElementById('errores').src = 'images/4error.jpg'
-  } else if (score.fail === 5) {
-    document.getElementById('errores').src = 'images/5error.jpg'
-  } else if (score.fail === 6) {
-    document.getElementById('errores').src = 'images/6error.jpg'
-  } else if (score.fail === 7) {
-    document.getElementById('errores').src = 'images/7error.jpg'
+  if (score.fail === 7) {
+    document.getElementById('errores').src = 'images/7error.jpg';
+    score.lose = score.lose + 1;
+    loseText.innerHTML = score.lose;
+
+
+    // si 7 es igual a 1, envía un innerHTML que se imprima en palabras erróneas
     //coloca una capa superior que no permita clickLetter o selectedLetter y tenga el botón de listWords
+
+
   }
 }
 
